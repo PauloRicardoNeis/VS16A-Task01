@@ -1,0 +1,35 @@
+$footer-fg: #c8c8c8;
+$border-color:    #ddd;
+$link-default:    #1e88e5;
+$link-visited:    #5c6bc0;
+$link-hover:      #1565c0;
+$link-active:     #0d47a1;
+
+.footer {
+  padding: 1.5rem 0;
+  border-top: 1px solid $border-color;
+  text-align: center;
+  background-color: #404040;
+  color: $footer-fg;
+  nav {
+    a{
+      color: $link-default;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:visited {
+        color: $link-visited;
+      }
+
+      &:active {
+        color: $link-active;
+      }
+
+      &:hover {
+        color: $link-hover;
+        text-decoration: underline;
+      }
+
+    }
+  }
+}
