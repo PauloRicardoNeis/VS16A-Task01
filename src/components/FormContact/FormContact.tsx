@@ -17,7 +17,7 @@ export default function FormContato() {
     return (
         <form onSubmit={handleSubmit} className={styles.form}>
             <label htmlFor="name">Name</label>
-            <input type="text" id="nome" name="nome" value={form.name} onChange={handleChange} />
+            <input type="text" id="name" name="name" value={form.name} onChange={handleChange} />
 
             <label htmlFor="email">Email</label>
             <input type="email" id="email" name="email" value={form.email} onChange={handleChange} />
