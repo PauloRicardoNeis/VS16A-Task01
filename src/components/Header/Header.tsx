@@ -1,6 +1,5 @@
 import Link from "next/link";
 import styles from "@/components/Header/Header.module.scss";
-import { navLinks } from "@/data/navLinks";
 
 export default function Header() {
     return (
@@ -8,13 +7,6 @@ export default function Header() {
             <div className={styles.logo}>
                 <Link href="/">Alexandre Cabanel</Link>
             </div>
-            <nav className={styles.nav}>
-                {navLinks.map((link) => (
-                    <Link key={link.href} href={link.href}>
-                        {link.label}
-                    </Link>
-                ))}
-            </nav>
         </header>
     );
 }
