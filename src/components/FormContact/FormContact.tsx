@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import styles from "./FormContact.module.scss";
 
 export default function FormContato() {
     const [form, setForm] = useState({ nome: "", email: "", mensagem: "" });
@@ -14,10 +15,16 @@ export default function FormContato() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input name="nome" placeholder="Seu nome" onChange={handleChange} />
-            <input name="email" type="email" placeholder="Seu email" onChange={handleChange} />
-            <textarea name="mensagem" placeholder="Sua mensagem" onChange={handleChange} />
+        <form onSubmit={handleSubmit} className={styles.form}>
+            <label htmlFor="nome">Nome</label>
+            <input type="text" id="nome" name="nome" value={form.nome} onChange={handleChange} />
+
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" value={form.email} onChange={handleChange} />
+
+            <label htmlFor="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows={5} value={form.mensagem} onChange={handleChange} />
+
             <button type="submit">Enviar</button>
         </form>
     );
