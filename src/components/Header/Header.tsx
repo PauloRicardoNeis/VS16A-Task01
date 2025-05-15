@@ -1,24 +1,19 @@
-import Link from 'next/link';
-import styles from '@/components/Header/Header.module.scss';
+import Link from "next/link";
+import styles from "@/components/Header/Header.module.scss";
+import { navLinks } from "@/data/navLinks";
 
 export default function Header() {
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
-                <Link href="/">
-                    MeuSite
-                </Link>
+                <Link href="/">MeuSite</Link>
             </div>
             <nav className={styles.nav}>
-                <Link href="/">
-                    Home
-                </Link>
-                <Link href="/menu2">
-                    Menu2
-                </Link>
-                <Link href="/menu3">
-                    Menu3
-                </Link>
+                {navLinks.map((link) => (
+                    <Link key={link.href} href={link.href}>
+                        {link.label}
+                    </Link>
+                ))}
             </nav>
         </header>
     );

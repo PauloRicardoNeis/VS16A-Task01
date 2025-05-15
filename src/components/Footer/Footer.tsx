@@ -1,14 +1,22 @@
 import styles from '@/components/Footer/Footer.module.scss';
 import Link from 'next/link';
+import { ReactElement } from 'react';
+import { navLinks } from '@/data/navLinks';
 
+function getLinksElement(): ReactElement[] {
+    return navLinks.map((link, index) => (
+        <span key={link.href}>
+      <Link href={link.href}>{link.label}</Link>
+            {index < navLinks.length - 1 && " | "}
+    </span>
+    ));
+}
 
 export default function Footer() {
     return (
         <footer className={styles.footer}>
             <nav>
-                <Link href="/">Home</Link> |
-                <Link href="/menu2">Menu2</Link> |
-                <Link href="/menu3">Menu3</Link>
+                {getLinksElement()}
             </nav>
             <p>&copy; {new Date().getFullYear()} Paulo Neis. Todos os direitos reservados.</p>
 
@@ -19,7 +27,6 @@ export default function Footer() {
             <div className={styles.tech}>
                 Feito com Next.js · Sass · TypeScript
             </div>
-
         </footer>
-    )
+    );
 }

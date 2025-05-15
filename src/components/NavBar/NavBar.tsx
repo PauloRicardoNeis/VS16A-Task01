@@ -1,19 +1,17 @@
-import Link from 'next/link'
-import styles from '@/components/NavBar/NavBar.module.scss'
+import Link from "next/link";
+import styles from "@/components/NavBar/NavBar.module.scss";
+import { navLinks } from "@/data/navLinks";
 
 export default function NavBar() {
     return (
         <nav className={styles.navbar}>
             <ul className={styles.list}>
-                <li>
-                    <Link href="/">Home</Link>
-                </li>
-                <li>
-                    <Link href="/menu2">Menu 2</Link>
-
-                    <Link href="/menu3">Menu 3</Link>
-                </li>
+                {navLinks.map((link) => (
+                    <li key={link.href}>
+                        <Link href={link.href}>{link.label}</Link>
+                    </li>
+                ))}
             </ul>
         </nav>
-    )
+    );
 }
