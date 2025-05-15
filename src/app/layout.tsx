@@ -4,18 +4,21 @@ import NavBar from '@/components/NavBar/NavBar'
 import Footer from '@/components/Footer/Footer'
 
 export const metadata = {
-    title: 'Meu Projeto',
+    title: 'Alexandre Cabanel',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
-        <html lang="pt-BR">
-        <body>
-        <Header />
-        <NavBar />
-        <main>{children}</main>
-        <Footer />
-        </body>
+        <html lang="en">
+            <body>
+                <div className="layout">
+                    <Header/>
+                    <NavBar/>
+                    <main>{children}</main>
+                    <Footer/>
+                </div>
+
+            </body>
         </html>
     )
 }
