@@ -6,9 +6,9 @@ import { navLinks } from '@/data/navLinks';
 function getLinksElement(): ReactElement[] {
     return navLinks.map((link, index) => (
         <span key={link.href}>
-      <Link href={link.href}>{link.label}</Link>
+            <Link href={link.href}>{link.label}</Link>
             {index < navLinks.length - 1 && " | "}
-    </span>
+        </span>
     ));
 }
 
@@ -18,14 +18,14 @@ export default function Footer() {
             <nav>
                 {getLinksElement()}
             </nav>
-            <p>&copy; {new Date().getFullYear()} Paulo Neis. Todos os direitos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} Paulo Neis. All rights reserved.</p>
 
             <small>
-                Desenvolvido por <a href="https://github.com/PauloRicardoNeis">PauloRicardoNeis</a>
+                Developed by <a href="https://github.com/PauloRicardoNeis">PauloRicardoNeis</a>
             </small>
 
             <div className={styles.tech}>
-                Feito com Next.js · Sass · TypeScript
+                Built with Next.js · Sass · TypeScript
             </div>
         </footer>
     );

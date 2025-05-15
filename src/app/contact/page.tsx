@@ -1,24 +1,24 @@
 import FormContact from "@/components/FormContact/FormContact";
-import Titulo from "@/components/Title/Title";
+import Title from "@/components/Title/Title";
 
-export default function Contato() {
+export default function Contact() {
     return (
         <>
-            <Titulo text="Contato" />
+            <Title text="Contact" />
             <p>
-                Tem alguma dúvida, sugestão ou deseja saber mais sobre nosso projeto?
-                Fique à vontade para entrar em contato preenchendo o formulário abaixo.
-                Responderemos o mais breve possível!
+                Have any questions, suggestions, or want to know more about our project?
+                Feel free to reach out by filling out the form below.
+                We’ll get back to you as soon as possible!
             </p>
 
             <FormContact />
 
             <section style={{ marginTop: "2rem" }}>
-                <h2>Outras formas de contato</h2>
+                <h2>Other ways to reach us</h2>
                 <ul>
                     <li>Email: <a href="mailto:contato@meusite.com">contato@meusite.com</a></li>
                     <li>GitHub: <a href="https://github.com/PauloRicardoNeis" target="_blank">/PauloRicardoNeis</a></li>
-                    <li>LinkedIn: <a href="https://www.linkedin.com/in/paulo-ricardo-neis-463a3525a/" target="_blank">Meu perfil</a></li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/paulo-ricardo-neis-463a3525a/" target="_blank">My profile</a></li>
                 </ul>
             </section>
         </>
