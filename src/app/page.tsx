@@ -1,4 +1,11 @@
+"use client";
+import GoogleLoginButton from "@/components/GoogleLoginButton/GoogleLoginButton";
+import useWindowSize from "@/hooks/useWindowSize";
+
 export default function HomePage() {
+
+    const { width, height } = useWindowSize();
+
     return (
         <section>
             <h1>Alexandre Cabanel</h1>
@@ -8,6 +15,8 @@ export default function HomePage() {
             <p>
                 This website is dedicated to celebrating his life and works, featuring biographical information, selected masterpieces, and a visual gallery of his most iconic paintings.
             </p>
+            <GoogleLoginButton />
+            <p>Viewport size: {width} × {height}px</p>
         </section>
     );
 }
