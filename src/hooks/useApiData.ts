@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useApiData<T = unknown>(url: string) {
+export default function useApiData<T>(url: string) {
     const [data, setData] = useState<T | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<Error | null>(null);
@@ -12,7 +12,7 @@ export default function useApiData<T = unknown>(url: string) {
         fetch(url)
             .then((res) => {
                 if (!res.ok) throw new Error("Erro na API");
-                return res.json();
+                return res.json() as Promise<T>;
             })
             .then((json) => setData(json))
             .catch(setError)
