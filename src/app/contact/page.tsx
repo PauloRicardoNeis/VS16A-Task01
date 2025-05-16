@@ -4,7 +4,7 @@ import Title from "@/components/Title/Title";
 export default function Contact() {
     return (
         <>
-            <Title text="Contact" />
+            <h1>Contact</h1>
             <p>
                 Have any questions, suggestions, or want to know more about our project?
                 Feel free to reach out by filling out the form below.
