@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useApiData<T = any>(url: string) {
+export default function useApiData<T = unknown>(url: string) {
     const [data, setData] = useState<T | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<Error | null>(null);
